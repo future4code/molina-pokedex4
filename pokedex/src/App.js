@@ -1,8 +1,9 @@
 import React from "react";
 import Router from "./route/Router";
-import styled, { createGlobalStyle} from 'styled-components'
+import Footer from './components/footer/Footer'
+import styled, { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle =  createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
     padding: 0;
@@ -17,9 +18,10 @@ const GlobalStyle =  createGlobalStyle`
 function App() {
   return (
     <div>
-      <GlobalStyle/>
+      <GlobalStyle />
+
+      <Router />
       
-      <Router/>
     </div>
   );
 }
