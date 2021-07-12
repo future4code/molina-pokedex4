@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
-      <Router />   
+      <Router/>
     </div>
   );
 }
