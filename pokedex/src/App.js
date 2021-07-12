@@ -1,9 +1,8 @@
 import React from "react";
 import Router from "./route/Router";
 import styled, { createGlobalStyle} from 'styled-components'
-import PokeCard from "./components/pokecard/PokeCard";
 
-const GlobalStyle =  createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
     padding: 0;
@@ -19,8 +18,7 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
-      <Router/>
-      <PokeCard/>
+      <Router />   
     </div>
   );
 }
