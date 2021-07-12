@@ -1,7 +1,6 @@
 import React from "react";
 import Router from "./route/Router";
-import Footer from './components/footer/Footer'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -18,10 +17,8 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <div>
-      <GlobalStyle />
-
-      <Router />
-      
+      <GlobalStyle/>
+      <Router />   
     </div>
   );
 }
