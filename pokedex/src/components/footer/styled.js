@@ -6,6 +6,7 @@ color: white;
 display: flex;
 justify-content: space-around;
 padding: 0 35px;
+background-color: black;
 
 
 h3{
@@ -15,6 +16,7 @@ h3{
 
 a{
     text-decoration: none;
+    color: red;
     
 }
 
@@ -43,13 +45,13 @@ width: 93px;
 
 `
 const Icone = styled.span`
-font-size: 35px;
+font-size: 40px;
 color: white;
 `
 
 const RedeSocial = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 
 `
 
