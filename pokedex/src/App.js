@@ -18,6 +18,7 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
+      <Header/>
       <Router/>
     </div>
   );
