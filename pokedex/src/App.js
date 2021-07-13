@@ -1,6 +1,6 @@
 import React from "react";
 import Router from "./route/Router";
-import styled, { createGlobalStyle} from 'styled-components'
+import { createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   *{
