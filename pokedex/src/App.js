@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "./route/Router";
 import styled, { createGlobalStyle} from 'styled-components'
+import Header from './components/header/Header'
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -18,6 +19,7 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
+      <Header/>
       <Router/>
     </div>
   );
