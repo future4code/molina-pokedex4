@@ -2,6 +2,7 @@ import React from "react";
 import Router from "./route/Router";
 import { createGlobalStyle} from 'styled-components'
 
+
 const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
@@ -18,7 +19,6 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
-      <Header/>
       <Router/>
     </div>
   );
