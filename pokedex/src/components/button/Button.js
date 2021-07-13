@@ -9,7 +9,7 @@ const Button = (props) => {
 
     return (
         <div>
-            <Botão onClick={irPara}>{props.nome}</Botão>
+            <Botão onClick={props.onClick}>{props.nome}</Botão>
         </div>
     )
 }
