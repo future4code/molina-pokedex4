@@ -78,7 +78,7 @@ const Name = styled.div`
 const Info = styled.div`
     position: absolute;
     margin: auto;
-    top: 80px;
+    top: 50px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -101,7 +101,7 @@ const Type = styled.div`
 const Skill = styled.div`
     position: absolute;
     margin: auto;
-    bottom: 10px;
+    bottom: 30px;
     right: 0;
     left: 0;
     width: 220px;
@@ -132,6 +132,39 @@ const SkillItem = styled.div`
     }
 `
 
+const ContainerBotao = styled.div`
+position: absolute;
+margin: auto;
+bottom: 20px;
+right: 0px;
+left: 0px;
+display: flex;
+justify-content: space-around;
+`
+const Botão = styled.button`
+
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+    background-color: #e7262d;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:12px;
+	font-weight:bold;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+:hover {
+    background-color:#e7262c;
+}
+:active {
+	position:relative;
+	top:1px;
+}
+        
+`
+
 export{
     Card,
     Top,
@@ -140,5 +173,7 @@ export{
     Info,
     Type,
     Skill,
-    SkillItem
+    SkillItem,
+    ContainerBotao,
+    Botão
 }

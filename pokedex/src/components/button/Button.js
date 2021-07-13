@@ -1,9 +1,10 @@
 import React from 'react'
+import {Botão} from './styled'
 
-const Button = () => {
+const Button = (props) => {
     return (
         <div>
-            
+            <Botão>{props.nome}</Botão>
         </div>
     )
 }

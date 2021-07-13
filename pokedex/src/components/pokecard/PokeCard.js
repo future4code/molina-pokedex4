@@ -1,13 +1,13 @@
 import React from 'react'
-import { Card, Top, Avatar, Name, Info, Type, Skill, SkillItem } from './styled'
+import { Card, Top, Avatar, Name, Info, Type, Skill, SkillItem, ContainerBotao, Botão } from './styled'
 
-const PokeCard = ({img, alt, name, numero, tipo, hp, att, def}) => {
+const PokeCard = ({ img, alt, name, numero, tipo, hp, att, def }) => {
     return (
         <div>
             <Card>
                 <Top></Top>
                 <Avatar>
-                    <img src={img} alt={alt}/>
+                    <img src={img} alt={alt} />
                 </Avatar>
                 <Name>
                     <p>{name}</p>
@@ -22,12 +22,19 @@ const PokeCard = ({img, alt, name, numero, tipo, hp, att, def}) => {
                 <Skill>
                     <h5>Skills</h5>
                     <SkillItem>
-                        <h5>HP <span>{hp}</span></h5>                        
-                        <h5>Att <span>{att}</span></h5>                        
-                        <h5>Def <span>{def}</span></h5>                        
+                        <h5>HP <span>{hp}</span></h5>
+                        <h5>Att <span>{att}</span></h5>
+                        <h5>Def <span>{def}</span></h5>
                     </SkillItem>
                 </Skill>
+            <ContainerBotao>
+            <Botão> + pokedex</Botão>
+            <Botão>Detalhes</Botão>
+
+
+            </ContainerBotao>
             </Card>
+
         </div>
     )
 }
