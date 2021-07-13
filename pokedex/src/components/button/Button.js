@@ -4,7 +4,7 @@ import {Botão} from './styled'
 const Button = (props) => {
     return (
         <div>
-            <Botão>{props.nome}</Botão>
+            <Botão onClick={props.onClick}>{props.nome}</Botão>
         </div>
     )
 }
