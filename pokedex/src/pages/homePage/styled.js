@@ -1,36 +1,31 @@
 import styled from 'styled-components'
 
-const Botão = styled.button`
-
-	box-shadow:inset 0px 1px 0px 0px #f29c93;
-	background-color:#ce0100;
-	border-radius:6px;
-	border:1px solid #d83526;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:12px;
-	font-weight:bold;
-	padding:8px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #b23e35;
-	
-:hover {
-    background-color:#e7262c;
-}
-:active {
-	position:relative;
-	top:1px;
-}  
-`
-
-const BotãoDiv = styled.div`
+const HeaderContainer = styled.div`
 display: flex;
-justify-content: flex-end;
-padding: 0 111px;
+background-color: black;
+padding: 10px;
+box-shadow: 2px 3px 3px rgba(0,0,0, 0.4);
+margin-bottom: 10px;
+`
+const LogoPokemon = styled.img`
+max-width: 100%;
+width: 200px;
+cursor: pointer;
 
 `
+
+const DivContainer = styled.div`
+
+width: 57.5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+
+
 export {
-    Botão,
-	BotãoDiv
+    HeaderContainer,
+    LogoPokemon,
+    DivContainer
+   
 }

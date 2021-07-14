@@ -1,8 +1,9 @@
 import React from 'react'
-import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import {Botão, BotãoDiv} from './styled'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import Botão from '../../components/botao/Botao'
+import { HeaderContainer, LogoPokemon, DivContainer } from './styled'
+
 
 const PokedexPage = () => {
 
@@ -14,12 +15,16 @@ const PokedexPage = () => {
 
     return (
         <div>
-            <Header/>
-            <BotãoDiv>
-            <Botão onClick={irParaHome}>Ir Para Home</Botão>
-            </BotãoDiv>
+
+            <HeaderContainer>
+                <DivContainer>
+                    <Botão onClick={irParaHome} nome="Voltar para Home" />
+                    <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
+                </DivContainer>
+
+            </HeaderContainer>
             <h1>Pokedex</h1>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

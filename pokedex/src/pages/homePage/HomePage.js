@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import {useHistory} from 'react-router-dom'
-import {Botão, BotãoDiv} from './styled'
+import { HeaderContainer, LogoPokemon, DivContainer } from './styled'
+import Botão from '../../components/botao/Botao'
 
 const HomePage = () => {
 
@@ -14,10 +14,14 @@ const HomePage = () => {
 
     return (
         <div>
-            <Header/>
-            <BotãoDiv>
-            <Botão onClick={irParaPokedex}>Ir para pokedex</Botão>
-            </BotãoDiv>
+               <HeaderContainer>
+                <DivContainer>
+                    <Botão onClick={irParaPokedex} nome="Ir para Pokedex" />
+                    <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
+                </DivContainer>
+
+            </HeaderContainer>
+            
             <h1>Home</h1>
             <Footer/>
         </div>
