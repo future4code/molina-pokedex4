@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Footer from '../../components/footer/Footer'
 import {useHistory} from 'react-router-dom'
 import { HeaderContainer, LogoPokemon, DivContainer } from './styled'
+import {GlobalStateContext} from '../../global/GlobalStateContext'
 import Botão from '../../components/botao/Botao'
 
 const HomePage = () => {
@@ -11,6 +12,10 @@ const HomePage = () => {
     const irParaPokedex = () =>{
         history.push('/pokedex')
     }
+
+    const pokeNome = useContext(GlobalStateContext)
+
+    console.log('estado',pokeNome)
 
     return (
         <div>
