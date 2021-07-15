@@ -7,6 +7,7 @@ display: flex;
 justify-content: space-around;
 padding: 0 35px;
 background-color: black;
+margin-top: 60px;
 
 
 h3{

@@ -8,7 +8,7 @@ const Card = styled.div`
     border-radius: 1rem;
     position: relative;
     width: 250px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin: 20px 0;
 `
 
@@ -16,7 +16,7 @@ const DivImg = styled.div`
     img{
         width: 8rem;
         clip-path: circle(60px at center);
-        margin-top: 3.8rem;
+        margin-top: 3.5rem;
         background-color: white;
     }
 `
