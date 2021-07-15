@@ -15,11 +15,14 @@ const HomePage = () => {
     }
 
     const pokemons = useContext(GlobalStateContext)
+    
+    
+     console.log('POKEDEX', pokemons.pokedex) 
 
-    console.log('estado', pokemons)
-
-    const addPokedex = (()=>{
-        alert('Adicionado')
+    const addPokedex = ((pokemon)=>{
+        alert(`${pokemon.name} adicionado a pokedex!`)
+        pokemons.setPokedex([...pokemons.pokedex, pokemon]) 
+        
     })
     
     return (
@@ -34,23 +37,23 @@ const HomePage = () => {
             <ContainerConteudo>
                 <h1>Lista de Pokemons</h1>
                 <DivCards>
-                    {pokemons.pokemons.map(({name,id, sprites, types, stats})=>{
+                    {pokemons.pokemons.map((pokemon)=>{
                         return(
                             <PokeCard
-                                key={id}
-                                nome={name}
-                                id={id}
-                                imagem={sprites.front_default}
-                                tipo={types.map((tipo, index)=>{
+                                key={pokemon.id}
+                                nome={pokemon.name}
+                                id={pokemon.id}
+                                imagem={pokemon.sprites.front_default}
+                                tipo={pokemon.types.map((tipo, index)=>{
                                     return(
                                        <span key={index}> -{tipo.type.name}</span> 
                                     )
                                 } )}
-                                hp={stats[0].base_stat}
-                                att={stats[1].base_stat}
-                                def={stats[2].base_stat}
+                                hp={pokemon.stats[0].base_stat}
+                                att={pokemon.stats[1].base_stat}
+                                def={pokemon.stats[2].base_stat}
 
-                                onClickPokedex={addPokedex}
+                                onClickPokedex={() =>addPokedex(pokemon)}
                             />
                         )
                     })}
