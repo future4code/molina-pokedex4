@@ -17,6 +17,10 @@ const HomePage = () => {
     const pokemons = useContext(GlobalStateContext)
 
     console.log('estado', pokemons)
+
+    const addPokedex = (()=>{
+        alert('Adicionado')
+    })
     
     return (
         <div>
@@ -33,6 +37,7 @@ const HomePage = () => {
                     {pokemons.pokemons.map(({name,id, sprites, types, stats})=>{
                         return(
                             <PokeCard
+                                key={id}
                                 nome={name}
                                 id={id}
                                 imagem={sprites.front_default}
@@ -45,6 +50,7 @@ const HomePage = () => {
                                 att={stats[1].base_stat}
                                 def={stats[2].base_stat}
 
+                                onClickPokedex={addPokedex}
                             />
                         )
                     })}

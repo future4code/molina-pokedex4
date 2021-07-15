@@ -13,7 +13,10 @@ const Card = styled.div`
 `
 
 const DivImg = styled.div`
+    
     img{
+        /* border: 10px solid black;
+        border-radius: 100%; */
         width: 8rem;
         clip-path: circle(60px at center);
         margin-top: 3.5rem;
