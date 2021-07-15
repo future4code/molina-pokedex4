@@ -27,7 +27,7 @@ const HomePage = () => {
 
             </HeaderContainer>
             
-            <h1>Home</h1>
+            <h1>Homepage</h1>
             <Footer/>
         </div>
     )
