@@ -4,25 +4,49 @@ import axios from 'axios'
 
 const GlobalState = (props) => {
 
-    const [pokeNome, setPokeNome] = useState([])
+    const [pokemons, setPokemons] = useState([])
 
-useEffect(()=>{
+    useEffect(() => {
+        // axios.get('https://pokeapi.co/api/v2/pokemon?limit=51&offset=')
+        //     .then((response) => {
+        //         setPokeNome(response.data.results)
+        //     })
+        //     .catch((error) => {
+        //         alert(error)
+        //     })
 
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=51&offset=')
-            .then((response) => {
-                setPokeNome(response.data)
-
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=12&offset=')
+            .then((res) => {
+                getPokemonDetail(res.data.results)
             })
-            .catch((error) => {
-                alert(error)
-            })
-   
+            .catch((err) => { alert(err) })
+    }, [])
+       
+        const getPokemonDetail = (array) => {
+            for (let item of array) {
+                axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
+                    .then((res) => {
+                        setPokemons((pokemons => [...pokemons, res.data]))
+                    }).catch((err) => { alert(err) })
+            }
+        }
 
-}, [])
-    
-        
+    // const getPokemonList = async () => {
+    //     const res = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20%27')
+    //     const names = await res.data.results
 
-    return <GlobalStateContext.Provider value={pokeNome}>
+    //     const getPokemonDetail = async (array) => {
+    //         for (let item of array) {
+    //             const res = await axios.get(https://pokeapi.co/api/v2/pokemon/${item.name})
+    //                 setPokemonDetailList((receivedInfo => [...receivedInfo, res.data]))
+    //         }
+    //     }
+    //     getPokemonDetail(names)
+    // }
+
+
+
+    return <GlobalStateContext.Provider value={{ pokemons, setPokemons }}>
         {props.children}
     </GlobalStateContext.Provider>
 
