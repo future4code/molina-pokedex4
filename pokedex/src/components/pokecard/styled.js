@@ -26,6 +26,8 @@ const BgCor = styled.div`
     height: 7rem;
     width: 100%;
     background-color: #E7262D;
+    border-bottom: 14px solid black;
+
 `
 
 const DivNome = styled.div`
