@@ -5,7 +5,7 @@ import axios from 'axios'
 const GlobalState = (props) => {
 
     const [pokemons, setPokemons] = useState([])
-
+   // const [tipos, setTipos] = useState([])
     useEffect(() => {
         // axios.get('https://pokeapi.co/api/v2/pokemon?limit=51&offset=')
         //     .then((response) => {
@@ -14,12 +14,15 @@ const GlobalState = (props) => {
         //     .catch((error) => {
         //         alert(error)
         //     })
-
+        
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=12&offset=')
             .then((res) => {
                 getPokemonDetail(res.data.results)
             })
             .catch((err) => { alert(err) })
+
+            //setTipos(pokemons.types)
+            //console.log(tipos)
     }, [])
        
         const getPokemonDetail = (array) => {
@@ -46,7 +49,7 @@ const GlobalState = (props) => {
 
 
 
-    return <GlobalStateContext.Provider value={{ pokemons, setPokemons }}>
+    return <GlobalStateContext.Provider value={{ pokemons, setPokemons, /*tipos*/ }}>
         {props.children}
     </GlobalStateContext.Provider>
 
