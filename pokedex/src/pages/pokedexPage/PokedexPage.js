@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
-import { HeaderContainer, LogoPokemon, DivContainer } from './styled'
+import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards } from './styled'
 
 
 const PokedexPage = () => {
@@ -23,7 +23,13 @@ const PokedexPage = () => {
                 </DivContainer>
 
             </HeaderContainer>
-            <h1>Pokedex</h1>
+            
+            <ContainerConteudo>
+                <h1>Pokedex</h1>
+                <DivCards>
+                   
+                </DivCards>
+            </ContainerConteudo>
             <Footer />
         </div>
     )
