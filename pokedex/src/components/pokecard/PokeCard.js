@@ -1,40 +1,46 @@
 import React from 'react'
-import { Card, Top, Avatar, Name, Info, Type, Skill, SkillItem, ContainerBotao, Botão } from './styled'
+import { Card, BgCor, DivNome, Nome, DivImg, Info, Tipo, DivHabilidades, Habilidades, DivBotao} from './styled'
+import Botao from '../botao/Botao'
 
-const PokeCard = ({ img, alt, name, numero, tipo, hp, att, def }) => {
+const PokeCard = () => {
     return (
         <div>
             <Card>
-                <Top></Top>
-                <Avatar>
-                    <img src={img} alt={alt} />
-                </Avatar>
-                <Name>
-                    <p>{name}</p>
-                    <h6>#{numero}</h6>
-                </Name>
+                <BgCor></BgCor>
+                <DivImg>
+                    <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png' alt='imagem do pokemon'/>
+                </DivImg>
+                
+                <DivNome>
+                    <Nome>Anna Marie</Nome>
+                    <h6>#1</h6>
+                </DivNome>
+                
                 <Info>
-                    <Type>
+                    <Tipo>
                         <h5>Tipo</h5>
-                        <p>{tipo}</p>
-                    </Type>
+                        <p>Agua</p>
+                    </Tipo>
+
+                    <DivHabilidades>
+                        <h5>Skills</h5>
+                        <Habilidades>
+                            <h5>HP <span>60</span></h5>
+                            <h5>Att <span>70</span></h5>
+                            <h5>Def <span>80</span></h5>
+                        </Habilidades>
+                    </DivHabilidades>
                 </Info>
-                <Skill>
-                    <h5>Skills</h5>
-                    <SkillItem>
-                        <h5>HP <span>{hp}</span></h5>
-                        <h5>Att <span>{att}</span></h5>
-                        <h5>Def <span>{def}</span></h5>
-                    </SkillItem>
-                </Skill>
-            <ContainerBotao>
-            <Botão> + pokedex</Botão>
-            <Botão>Detalhes</Botão>
 
-
-            </ContainerBotao>
+                <DivBotao>
+                    <Botao
+                        nome='+ Pokedex'
+                    />
+                    <Botao
+                        nome='Detalhes'
+                    />
+                </DivBotao>
             </Card>
-
         </div>
     )
 }
