@@ -19,7 +19,7 @@ const PokeCard = (props) => {
                 <Info>
                     <Tipo>
                         <h5>Tipo</h5>
-                        <p>{props.tipo1}{props.tipo2}</p>
+                        <p>{props.tipo}</p>
                     </Tipo>
 
                     <DivHabilidades>

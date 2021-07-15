@@ -36,11 +36,11 @@ const HomePage = () => {
                                 nome={name}
                                 id={id}
                                 imagem={sprites.front_default}
-                                //tipo={types.map((tipo, index)=>{
-                                //    return(
-                                //       <p key={index}>{tipo.type}</p> 
-                                //    )
-                                //} )}
+                                tipo={types.map((tipo, index)=>{
+                                    return(
+                                       <span key={index}> -{tipo.type.name}</span> 
+                                    )
+                                } )}
                                 hp={stats[0].base_stat}
                                 att={stats[1].base_stat}
                                 def={stats[2].base_stat}
