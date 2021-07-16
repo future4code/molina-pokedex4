@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, /* useState */ } from 'react'
+import React, { useContext } from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, DivCards } from './styled'
@@ -15,7 +15,6 @@ const HomePage = () => {
     const addPokedex = ((pokemon) => {
         alert(`${pokemon.name} adicionado a pokedex!`)
         pokemons.setPokedex([...pokemons.pokedex, pokemon])
-        
 
 
     })
@@ -32,15 +31,15 @@ const HomePage = () => {
                 return false
             }
         })
+
         if (pokedex) {
             return false
         } else {
             return true
         }
-
     })
 
-    
+
     return (
         <div>
             <HeaderContainer>

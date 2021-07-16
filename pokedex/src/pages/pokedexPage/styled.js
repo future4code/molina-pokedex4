@@ -23,9 +23,7 @@ const LogoPokemon = styled.img`
 max-width: 100%;
 width: 200px;
 cursor: pointer;
-
 `
-
 const DivContainer = styled.div`
 
 width: 57.5%;
@@ -39,12 +37,36 @@ const DivCards = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `
+const PokedexVazia = styled.div`
+height: 400px;
+display: flex;
+margin: auto;
 
+h2 {
+  font-size: 40px;
+  color: white;
+  margin-top: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 100;
+
+}
+
+img{
+  height: 300px;
+
+}
+`
+
+const Titulo = styled.h1`
+text-align: center;
+`
 
 export {
     HeaderContainer,
     LogoPokemon,
     DivContainer,
     ContainerConteudo,
-    DivCards   
+    DivCards,
+    PokedexVazia,
+    Titulo
 }

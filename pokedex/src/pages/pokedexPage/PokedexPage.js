@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import PokeCard from '../../components/pokecard/PokeCard'
-import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards } from './styled'
+import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards, PokedexVazia, Titulo } from './styled'
 
 
 const PokedexPage = () => {
@@ -18,8 +18,7 @@ const PokedexPage = () => {
     }
 
     const pokedex = pokemons.pokedex
-
-    /* console.log('POKEDEX', pokedex) */
+    console.log('Pokedex', pokedex)
 
     return (
         <div>
@@ -33,9 +32,10 @@ const PokedexPage = () => {
             </HeaderContainer>
 
             <ContainerConteudo>
-                <h1>Pokedex</h1>
+                <Titulo>Pokedex</Titulo>
                 <DivCards>
-                    {pokedex.map((pokemon) => {
+                    {pokedex.length > 0 ? 
+                    pokedex.map((pokemon) => {
                         return <PokeCard
                             key={pokemon.id}
                             nome={pokemon.name}
@@ -48,7 +48,11 @@ const PokedexPage = () => {
                             nomeBotaoEsquerdo="Remover"
 
                         />
-                    })}
+                    })
+
+               : <PokedexVazia><h2>Nenhum pokemon foi adicionado a pokedex.</h2>
+               <img src='https://www.pngall.com/wp-content/uploads/5/Cute-Pikachu-PNG-Clipart.png'/>
+               </PokedexVazia> }
 
 
                 </DivCards>
