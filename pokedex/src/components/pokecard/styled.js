@@ -40,6 +40,7 @@ const DivNome = styled.div`
 const Nome = styled.p`
     font-weight: bold;
     font-size: 1rem;
+    text-transform: capitalize;
 `
 
 const Info = styled.div`
@@ -50,6 +51,7 @@ const Tipo = styled.div`
     
     p{
         font-size: 0.85em;
+        text-transform: capitalize;
     }
 `
 
@@ -68,7 +70,7 @@ const Habilidades = styled.div`
 `
 
 const DivBotao = styled.div`
-    margin-top: 15px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-evenly;
 `

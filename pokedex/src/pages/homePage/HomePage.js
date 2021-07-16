@@ -9,19 +9,21 @@ import PokeCard from '../../components/pokecard/PokeCard'
 const HomePage = () => {
 
    const history = useHistory()
+   const pokemons = useContext(GlobalStateContext)
       
     const irParaPokedex = () =>{
         history.push('/pokedex')
     }
 
-    const pokemons = useContext(GlobalStateContext)
-
-    console.log('estado', pokemons)
-
     const addPokedex = (()=>{
         alert('Adicionado')
     })
-    
+
+    const detalhes = (pokeNome) =>{
+        history.push(`/details/${pokeNome}`)
+        console.log(pokeNome)
+    }
+
     return (
         <div>
             <HeaderContainer>
@@ -34,23 +36,21 @@ const HomePage = () => {
             <ContainerConteudo>
                 <h1>Lista de Pokemons</h1>
                 <DivCards>
-                    {pokemons.pokemons.map(({name,id, sprites, types, stats})=>{
+                    {pokemons.pokemons.map((pokemon)=>{
                         return(
                             <PokeCard
-                                key={id}
-                                nome={name}
-                                id={id}
-                                imagem={sprites.front_default}
-                                tipo={types.map((tipo, index)=>{
+                                key={pokemon.id}
+                                nome={pokemon.name}
+                                id={pokemon.id}
+                                imagem={pokemon.sprites.front_default}
+                                tipo={pokemon.types.map((tipo, index)=>{
                                     return(
                                        <span key={index}> -{tipo.type.name}</span> 
                                     )
                                 } )}
-                                hp={stats[0].base_stat}
-                                att={stats[1].base_stat}
-                                def={stats[2].base_stat}
 
                                 onClickPokedex={addPokedex}
+                                onClickDetalhes={()=>detalhes(pokemon.name)}
                             />
                         )
                     })}

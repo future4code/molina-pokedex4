@@ -14,7 +14,7 @@ const ContainerConteudo = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   background-color: #0a0a0a;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
   margin-bottom: 10px;
 `
