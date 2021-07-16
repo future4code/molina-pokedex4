@@ -21,15 +21,6 @@ const PokeCard = (props) => {
                         <h5>Tipo</h5>
                         <p>{props.tipo}</p>
                     </Tipo>
-
-                    <DivHabilidades>
-                        <h5>Skills</h5>
-                        <Habilidades>
-                            <h5>HP <span>{props.hp}</span></h5>
-                            <h5>Att <span>{props.att}</span></h5>
-                            <h5>Def <span>{props.def}</span></h5>
-                        </Habilidades>
-                    </DivHabilidades>
                 </Info>
 
                 <DivBotao>

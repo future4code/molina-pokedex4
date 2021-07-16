@@ -8,12 +8,19 @@ import PokeCard from '../../components/pokecard/PokeCard'
 
 const HomePage = () => {
 
+
     const history = useHistory()
 
     const irParaPokedex = () => {
+
+ 
         history.push('/pokedex')
     }
 
+
+    const addPokedex = (()=>{
+        alert('Adicionado')
+      
     const pokemons = useContext(GlobalStateContext)
 
     /* const pokemon = pokemons.pokemons
@@ -51,6 +58,7 @@ const HomePage = () => {
     })
 
 
+
   /*   const pokemonsFiltrados = pokemons.pokemons.filter((pokemon) => {
         const pokedex = pokemons.pokedex.find((pokemonEscolhido) => {
             if (pokemon.id === pokemonEscolhido.id) {
@@ -67,6 +75,12 @@ const HomePage = () => {
 
     }) */
 
+
+
+    const detalhes = (pokeNome) =>{
+        history.push(`/details/${pokeNome}`)
+        console.log(pokeNome)
+    }
 
 
     return (
@@ -92,12 +106,14 @@ const HomePage = () => {
                                     return (
                                         <span key={index}> -{tipo.type.name}</span>
                                     )
+
                                 })}
                                 hp={pokemon.stats[0].base_stat}
                                 att={pokemon.stats[1].base_stat}
                                 def={pokemon.stats[2].base_stat}
                                 nomeBotaoEsquerdo="+ pokedex"
                                 onClickPokedex={() => addPokedex(pokemon)}
+
                             />
                         )
                     })}

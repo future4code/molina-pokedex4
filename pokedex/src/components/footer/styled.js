@@ -3,9 +3,9 @@ import styled from 'styled-components'
 const FooterDiv = styled.div`
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 110px;
+    padding: 30px 120px;
     background-color: black;
     margin-top: 60px;
 
@@ -22,21 +22,18 @@ const FooterDiv = styled.div`
 
 `
 
+const SobreDiv = styled.div`
+    max-width: 100%;
+    width: 280px ;
+    text-align: center;
+`
+
 const Logo = styled.img`
     max-width: 100%;
     width: 150px;
-
 `
 
-const SobreDiv = styled.div`
-    max-width: 100%;
-    width: 310px ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
+const SiteDiv = styled.div`
 `
 
 const Pokebola = styled.img`
@@ -48,19 +45,14 @@ const Icone = styled.span`
     color: white;
 `
 
-const RedeSocial = styled.div`
-    display: flex;
-    justify-content: space-between;
-`
-
-const SiteDiv = styled.div`
-    margin: auto;
-
-`
 
 const StyledDiv = styled.div`
 `
 
+const RedeSocial = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
 
 export {
     FooterDiv,
