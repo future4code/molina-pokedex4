@@ -9,11 +9,16 @@ import PokeCard from '../../components/pokecard/PokeCard'
 const HomePage = () => {
 
    const history = useHistory()
+   const pokemons = useContext(GlobalStateContext)
       
     const irParaPokedex = () =>{
         history.push('/pokedex')
     }
 
+
+    const addPokedex = (()=>{
+        alert('Adicionado')
+      
     const pokemons = useContext(GlobalStateContext)
     
     
@@ -24,7 +29,12 @@ const HomePage = () => {
         pokemons.setPokedex([...pokemons.pokedex, pokemon]) 
         
     })
-    
+
+    const detalhes = (pokeNome) =>{
+        history.push(`/details/${pokeNome}`)
+        console.log(pokeNome)
+    }
+
     return (
         <div>
             <HeaderContainer>
@@ -49,11 +59,10 @@ const HomePage = () => {
                                        <span key={index}> -{tipo.type.name}</span> 
                                     )
                                 } )}
-                                hp={pokemon.stats[0].base_stat}
-                                att={pokemon.stats[1].base_stat}
-                                def={pokemon.stats[2].base_stat}
 
-                                onClickPokedex={() =>addPokedex(pokemon)}
+                                onClickPokedex={addPokedex}
+                                onClickDetalhes={()=>detalhes(pokemon.name)}
+
                             />
                         )
                     })}
