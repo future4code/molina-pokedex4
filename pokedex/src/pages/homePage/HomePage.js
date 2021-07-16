@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, /* useState */ } from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, DivCards } from './styled'
@@ -16,14 +16,58 @@ const HomePage = () => {
 
     const pokemons = useContext(GlobalStateContext)
 
+    /* const pokemon = pokemons.pokemons
+    const pokedex = pokemons.pokedex
+ */
 
-    /* console.log('POKEDEX', pokemons.pokedex) */
+    console.log('POKEMONS', pokemons.pokemons)
+
+    console.log('POKEDEX', pokemons.pokedex)
+
+    /*  useEffect(()=>{
+         const pokemonsFiltrados = pokemons.pokemons.filter((pokemon) =>{
+             return pokemon.pokemons !== pokemon.pokedex
+             
+         })
+         
+         
+     }, [pokemons.pokedex]) */
+
 
     const addPokedex = ((pokemon) => {
         alert(`${pokemon.name} adicionado a pokedex!`)
         pokemons.setPokedex([...pokemons.pokedex, pokemon])
+        /* pokemons.setPokemons([...pokemons.pokemons, pokemons.pokemons.filter((pokemon) => {
+            return pokemon.pokemons !== pokemon.pokedex
+
+        }) ]) */
+
+        /* const indice = pokemons.pokemons.indexOf(pokemon.name) 
+        const pokemonRemovidoHome = pokemons.pokemons.splice(pokemon.id, 1)
+       
+       console.log('POKEMON REMOVIDO', pokemonRemovidoHome)  */
+
 
     })
+
+
+  /*   const pokemonsFiltrados = pokemons.pokemons.filter((pokemon) => {
+        const pokedex = pokemons.pokedex.find((pokemonEscolhido) => {
+            if (pokemon.id === pokemonEscolhido.id) {
+                return true
+            } else {
+                return false
+            }
+        })
+        if (pokedex) {
+            return false
+        } else {
+            return true
+        }
+
+    }) */
+
+
 
     return (
         <div>

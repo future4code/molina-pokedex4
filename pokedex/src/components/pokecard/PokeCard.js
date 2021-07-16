@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, BgCor, DivNome, Nome, DivImg, Info, Tipo, DivHabilidades, Habilidades, DivBotao} from './styled'
+import { Card, BgCor, DivNome, Nome, DivImg, Info, Tipo, DivHabilidades, Habilidades, DivBotao } from './styled'
 import Botao from '../botao/Botao'
 
 const PokeCard = (props) => {
@@ -8,14 +8,14 @@ const PokeCard = (props) => {
             <Card>
                 <BgCor></BgCor>
                 <DivImg>
-                    <img src={props.imagem} alt='imagem do pokemon'/>
+                    <img src={props.imagem} alt='imagem do pokemon' />
                 </DivImg>
-                
+
                 <DivNome>
                     <Nome>{props.nome}</Nome>
                     <h6>#{props.id}</h6>
                 </DivNome>
-                
+
                 <Info>
                     <Tipo>
                         <h5>Tipo</h5>
