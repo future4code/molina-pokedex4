@@ -16,7 +16,7 @@ const GlobalState = (props) => {
         //         alert(error)
         //     })
         
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=12&offset=')
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=')
             .then((res) => {
                 getPokemonDetail(res.data.results)
             })
