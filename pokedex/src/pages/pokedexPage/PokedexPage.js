@@ -45,6 +45,7 @@ const PokedexPage = () => {
                                     <span key={index}> -{tipo.type.name}</span>
                                 )
                             })}
+                            nomeBotaoEsquerdo="Remover"
 
                         />
                     })}

@@ -34,7 +34,7 @@ const PokeCard = (props) => {
 
                 <DivBotao>
                     <Botao
-                        nome='+ Pokedex'
+                        nome={props.nomeBotaoEsquerdo}
                         onClick={props.onClickPokedex}
                     />
                     <Botao

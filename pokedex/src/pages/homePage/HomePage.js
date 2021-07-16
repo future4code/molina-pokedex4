@@ -52,7 +52,7 @@ const HomePage = () => {
                                 hp={pokemon.stats[0].base_stat}
                                 att={pokemon.stats[1].base_stat}
                                 def={pokemon.stats[2].base_stat}
-
+                                nomeBotaoEsquerdo="+ pokedex"
                                 onClickPokedex={() => addPokedex(pokemon)}
                             />
                         )
