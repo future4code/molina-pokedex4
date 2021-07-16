@@ -15,8 +15,19 @@ const HomePage = () => {
         history.push('/pokedex')
     }
 
+
     const addPokedex = (()=>{
         alert('Adicionado')
+      
+    const pokemons = useContext(GlobalStateContext)
+    
+    
+     console.log('POKEDEX', pokemons.pokedex) 
+
+    const addPokedex = ((pokemon)=>{
+        alert(`${pokemon.name} adicionado a pokedex!`)
+        pokemons.setPokedex([...pokemons.pokedex, pokemon]) 
+        
     })
 
     const detalhes = (pokeNome) =>{
@@ -51,6 +62,7 @@ const HomePage = () => {
 
                                 onClickPokedex={addPokedex}
                                 onClickDetalhes={()=>detalhes(pokemon.name)}
+
                             />
                         )
                     })}
