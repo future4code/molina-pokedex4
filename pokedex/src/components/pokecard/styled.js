@@ -15,8 +15,6 @@ const Card = styled.div`
 const DivImg = styled.div`
     
     img{
-        /* border: 10px solid black;
-        border-radius: 100%; */
         width: 8rem;
         clip-path: circle(60px at center);
         margin-top: 3.5rem;
@@ -55,20 +53,6 @@ const Tipo = styled.div`
     }
 `
 
-const DivHabilidades = styled.div`
-    margin-top: 10px;
-`
-
-const Habilidades = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-
-    span{
-        font-weight: normal;
-    }
-`
-
 const DivBotao = styled.div`
     margin-top: 25px;
     display: flex;
@@ -83,7 +67,5 @@ export {
     DivImg,
     Info, 
     Tipo,
-    DivHabilidades,
-    Habilidades,
     DivBotao
 }

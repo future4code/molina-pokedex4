@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext} from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
@@ -8,33 +8,22 @@ import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards
 
 
 const PokedexPage = () => {
-
-    const pokemons = useContext(GlobalStateContext)
-
+    const global = useContext(GlobalStateContext)
     const history = useHistory()
 
     const irParaHome = () => {
         history.push('/')
     }
-
-    
-    
-    console.log('Pokedex', pokemons.pokedex)
-
     
     const removePokemon = (index) => {
-        let novaPokedex = [...pokemons.pokedex]
+        let novaPokedex = [...global.pokedex]
         novaPokedex.splice(index, 1)
+        global.setPokedex(novaPokedex)
 
-        pokemons.setPokedex(novaPokedex)
-
-    }
-   
-       
+    }  
 
     const detalhes = (pokeNome) => {
         history.push(`/details/${pokeNome}`)
-        console.log(pokeNome)
     }
 
     return (
@@ -42,7 +31,9 @@ const PokedexPage = () => {
 
             <HeaderContainer>
                 <DivContainer>
-                    <Botão onClick={irParaHome} nome="Voltar para Home" />
+                    <div>
+                        <Botão onClick={irParaHome} nome="Voltar para Home" />
+                    </div>
                     <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
                 </DivContainer>
 
@@ -51,8 +42,8 @@ const PokedexPage = () => {
             <ContainerConteudo>
                 <h1>Pokedex</h1>
                 <DivCards>
-                    {pokemons.pokedex.length > 0 ? 
-                    pokemons.pokedex.map((pokemon, index) => {
+                    {global.pokedex.length > 0 ? 
+                    global.pokedex.map((pokemon, index) => {
                         return <PokeCard
                             key={pokemon.id}
                             nome={pokemon.name}
@@ -65,14 +56,12 @@ const PokedexPage = () => {
                             nomeBotaoEsquerdo="Remover"
                             onClickDetalhes={()=>detalhes(pokemon.name)}
                             onClickPokedex={() => removePokemon(index)}
-
                         />
                     })
 
-               : <PokedexVazia><h2>Nenhum pokemon foi adicionado a pokedex.</h2>
+               : <PokedexVazia><h1>Nenhum pokemon foi adicionado a pokedex.</h1>
                <img src='https://www.pngall.com/wp-content/uploads/5/Cute-Pikachu-PNG-Clipart.png'/>
                </PokedexVazia> }
-
 
                 </DivCards>
             </ContainerConteudo>

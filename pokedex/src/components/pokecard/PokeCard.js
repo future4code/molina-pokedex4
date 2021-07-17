@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, BgCor, DivNome, Nome, DivImg, Info, Tipo, DivHabilidades, Habilidades, DivBotao } from './styled'
+import { Card, BgCor, DivNome, Nome, DivImg, Info, Tipo, DivBotao } from './styled'
 import Botao from '../botao/Botao'
 
 const PokeCard = (props) => {

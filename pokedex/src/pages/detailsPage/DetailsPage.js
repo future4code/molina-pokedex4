@@ -39,6 +39,7 @@ const DetailsPage = () => {
     React.useEffect(()=>{
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeNome}`)
         .then((res)=>{
+            //Mudar isso aqui. É para desestruturar no GlobalState
             setPokeDetalhes(res.data)
             setImagem(res.data.sprites.other['official-artwork'].front_default)
             setEstatisticas(res.data.stats)
@@ -46,19 +47,24 @@ const DetailsPage = () => {
             setTipos(res.data.types)
         })
         .catch((err)=>{
-            console.log(err)
+            alert(err)
         })
 
     },[])
-
-    console.log(tipos)
 
     return (
         <div>
             <HeaderContainer>
                 <DivContainer>
-                    <Botão onClick={()=>history.goBack()} nome="Voltar para Home" />
+                    <div>
+                        <Botão onClick={()=>history.goBack()} nome="Voltar para Home" />
+                    </div>
+
                     <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
+                    
+                    <div>
+                        <Botão onClick={()=>history.push('/pokedex')} nome="Ir para Pokedex"/>
+                    </div>
                 </DivContainer>
             </HeaderContainer>
            
@@ -110,12 +116,7 @@ const DetailsPage = () => {
                                     default:
                                         return <Tipo cor={'#F0ECA8'}>{tipo.type.name}</Tipo>
                                 }
-
-                                // return(
-                                //     <Tipo cor={'#9BCC50'}>{tipo.type.name}</Tipo>
-                                // )
                             })}
-                            
                         </DivTipo>
                     </div>
                    
