@@ -8,7 +8,7 @@ import PokeCard from '../../components/pokecard/PokeCard'
 
 const HomePage = () => {
     const history = useHistory()
-    const pokemons = useContext(GlobalStateContext)
+    const global = useContext(GlobalStateContext)
    
     const irParaPokedex = () => {
         history.push('/pokedex')
@@ -16,16 +16,15 @@ const HomePage = () => {
 
     const addPokedex = ((pokemon) => {
         alert(`${pokemon.name} adicionado a pokedex!`)
-        pokemons.setPokedex([...pokemons.pokedex, pokemon])
+        global.setPokedex([...global.pokedex, pokemon])
     })
 
     const detalhes = (pokeNome) => {
         history.push(`/details/${pokeNome}`)
-        console.log(pokeNome)
     }
 
-    const pokemonsFiltrados = pokemons.pokemons.filter((pokemon) => {
-        const pokedex = pokemons.pokedex.find((pokemonEscolhido) => {
+    const pokemonsFiltrados = global.pokemons.filter((pokemon) => {
+        const pokedex = global.pokedex.find((pokemonEscolhido) => {
             if (pokemon.id === pokemonEscolhido.id) {
                 return true
             } else {
@@ -45,7 +44,9 @@ const HomePage = () => {
         <div>
             <HeaderContainer>
                 <DivContainer>
-                    <Botão onClick={irParaPokedex} nome="Ir para Pokedex" />
+                    <div>
+                        <Botão onClick={irParaPokedex} nome="Ir para Pokedex" />
+                    </div>
                     <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
                 </DivContainer>
             </HeaderContainer>

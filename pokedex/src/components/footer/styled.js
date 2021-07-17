@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 
 const FooterDiv = styled.div`
+    max-width: 100%;
+    padding: 20px 0;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 120px;
-    background-color: black;
+    background-color: #0a0a0a;
     margin-top: 60px;
 
     h3{
@@ -19,13 +17,31 @@ const FooterDiv = styled.div`
         color: red;
         
     }
+`
 
+const ConteudoFooter = styled.div`
+    max-width: 100%;
+    width: 1160px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 420px){
+        flex-direction: column;
+    }
 `
 
 const SobreDiv = styled.div`
     max-width: 100%;
     width: 280px ;
     text-align: center;
+
+    @media (max-width: 420px){
+        margin-bottom: 20px;
+    }
 `
 
 const Logo = styled.img`
@@ -34,11 +50,15 @@ const Logo = styled.img`
 `
 
 const SiteDiv = styled.div`
+
+    @media (max-width: 420px){
+        margin-bottom: 20px;
+    }
 `
 
 const Pokebola = styled.img`
+    max-width: 100%;
     width: 93px;
-
 `
 const Icone = styled.span`
     font-size: 40px;
@@ -62,6 +82,6 @@ export {
     Icone,
     RedeSocial,
     SiteDiv,
-    StyledDiv
-
+    StyledDiv,
+    ConteudoFooter
 }

@@ -1,28 +1,35 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-  display: flex;
   background-color: #0a0a0a;
-  padding: 15px;
+  padding: 15px 0;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-  margin-bottom: 10px;
 `
 const LogoPokemon = styled.img`
   max-width: 100%;
   width: 200px;
   cursor: pointer;
+
+  @media (max-width: 420px){
+    margin: 15px 0;
+  }  
 `
 
 const DivContainer = styled.div`
-  width: 57.5%;
+  max-width: 100%;
+  width: 1160px;
   display: flex;
+  margin: 0 auto;
+  padding: 0 29px;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 420px){
+    flex-direction: column;
+  }  
 `
 
 const ContainerConteudo = styled.div`
-  max-width: 100%;
-  width: 1160px;
   margin: 0 auto;
 `
 
@@ -54,18 +61,17 @@ const DivPrincipal = styled.div`
 
 const DivImg = styled.div`
   max-width: 100%;
-  width: 350px;
   margin: 0 80px;
 
   img{
     max-width: 100%;
+    width: 350px;
   }
 `
 
 const DivTipo = styled.div`
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
 `
 
 const DivInfo = styled.div`
@@ -89,6 +95,10 @@ const DivInfo = styled.div`
     margin-bottom: 5px;
     border-radius: 50px;
   }
+
+  @media (max-width: 420px){
+    margin-top: 40px;
+  }  
 `
 
 const Estatisticas =  styled.div`
