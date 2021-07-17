@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
@@ -17,8 +17,20 @@ const PokedexPage = () => {
         history.push('/')
     }
 
-    const pokedex = pokemons.pokedex
-    console.log('Pokedex', pokedex)
+    
+    
+    console.log('Pokedex', pokemons.pokedex)
+
+    
+    const removePokemon = (index) => {
+        let novaPokedex = [...pokemons.pokedex]
+        novaPokedex.splice(index, 1)
+
+        pokemons.setPokedex(novaPokedex)
+
+    }
+   
+       
 
     return (
         <div>
@@ -34,8 +46,8 @@ const PokedexPage = () => {
             <ContainerConteudo>
                 <Titulo>Pokedex</Titulo>
                 <DivCards>
-                    {pokedex.length > 0 ? 
-                    pokedex.map((pokemon) => {
+                    {pokemons.pokedex.length > 0 ? 
+                    pokemons.pokedex.map((pokemon, index) => {
                         return <PokeCard
                             key={pokemon.id}
                             nome={pokemon.name}
@@ -46,6 +58,7 @@ const PokedexPage = () => {
                                 )
                             })}
                             nomeBotaoEsquerdo="Remover"
+                            onClickPokedex={() => removePokemon(index)}
 
                         />
                     })
