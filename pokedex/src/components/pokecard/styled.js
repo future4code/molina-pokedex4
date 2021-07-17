@@ -9,7 +9,7 @@ const Card = styled.div`
     position: relative;
     width: 250px;
     padding-bottom: 15px;
-    margin: 20px 0;
+    margin: 20px 15px;
 `
 
 const DivImg = styled.div`

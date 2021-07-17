@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import PokeCard from '../../components/pokecard/PokeCard'
-import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards, PokedexVazia, Titulo } from './styled'
+import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards, PokedexVazia } from './styled'
 
 
 const PokedexPage = () => {
@@ -20,6 +20,11 @@ const PokedexPage = () => {
     const pokedex = pokemons.pokedex
     console.log('Pokedex', pokedex)
 
+    const detalhes = (pokeNome) => {
+        history.push(`/details/${pokeNome}`)
+        console.log(pokeNome)
+    }
+
     return (
         <div>
 
@@ -32,7 +37,7 @@ const PokedexPage = () => {
             </HeaderContainer>
 
             <ContainerConteudo>
-                <Titulo>Pokedex</Titulo>
+                <h1>Pokedex</h1>
                 <DivCards>
                     {pokedex.length > 0 ? 
                     pokedex.map((pokemon) => {
@@ -46,6 +51,7 @@ const PokedexPage = () => {
                                 )
                             })}
                             nomeBotaoEsquerdo="Remover"
+                            onClickDetalhes={()=>detalhes(pokemon.name)}
 
                         />
                     })

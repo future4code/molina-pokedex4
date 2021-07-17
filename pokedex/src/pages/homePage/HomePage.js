@@ -9,15 +9,16 @@ import PokeCard from '../../components/pokecard/PokeCard'
 const HomePage = () => {
     const history = useHistory()
     const pokemons = useContext(GlobalStateContext)
+   
     const irParaPokedex = () => {
         history.push('/pokedex')
     }
+
     const addPokedex = ((pokemon) => {
         alert(`${pokemon.name} adicionado a pokedex!`)
         pokemons.setPokedex([...pokemons.pokedex, pokemon])
-
-
     })
+
     const detalhes = (pokeNome) => {
         history.push(`/details/${pokeNome}`)
         console.log(pokeNome)

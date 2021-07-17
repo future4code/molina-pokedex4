@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContainerConteudo = styled.div`
   max-width: 100%;
-  width: 1120px;
+  width: 1160px;
   margin: 0 auto;
 
   h1{
@@ -34,7 +34,7 @@ const DivContainer = styled.div`
 const DivCards = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 0 15px ;
 `
 
 export { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, DivCards };
