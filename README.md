@@ -1,16 +1,18 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Larissa Menezes
+- João Pedro Lopes Rodrigues
+- Raphael Nicolini da Silva
+- Igor Artagnan
 
-Link do Surge: www.link.com.br
+Link do Surge: https://elastic-steel.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Renderização dos pokemons
+- Adicionar pokemons a pokedex
+- Remover pokemons da pokedex
+- Ver detalhes dos pokemons
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Responsividade
