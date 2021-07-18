@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const FooterDiv = styled.div`
+const FooterDiv = styled.footer`
     max-width: 100%;
     padding: 20px 0;
     color: white;
@@ -65,10 +65,6 @@ const Icone = styled.span`
     color: white;
 `
 
-
-const StyledDiv = styled.div`
-`
-
 const RedeSocial = styled.div`
     display: flex;
     justify-content: space-between;
@@ -82,6 +78,5 @@ export {
     Icone,
     RedeSocial,
     SiteDiv,
-    StyledDiv,
     ConteudoFooter
 }

@@ -1,20 +1,20 @@
 import React from 'react'
 import Footer from '../../components/footer/Footer'
-import { 
-    HeaderContainer, 
+import {
+    HeaderDiv,
     LogoPokemon,
-    DivContainer, 
-    ContainerConteudo, 
-    DivTitulo, 
+    ConteudoDiv,
+    ContainerConteudo,
+    DivTitulo,
     DivPrincipal,
     DivImg,
     DivInfo,
     Estatisticas,
     Golpes,
     DivTipo
-    } from './styled'
+} from './styled'
 import Botão from '../../components/botao/Botao'
-import {useHistory, useParams} from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -24,7 +24,7 @@ const Tipo = styled.h4`
     border-radius: 5px;
     margin: 0 10px;
     text-transform: capitalize;
-    background-color: ${({cor})=>cor};
+    background-color: ${({ cor }) => cor};
 `
 
 const DetailsPage = () => {
@@ -34,58 +34,57 @@ const DetailsPage = () => {
     const [estatisticas, setEstatisticas] = React.useState([])
     const [golpes, setGolpes] = React.useState([])
     const [tipos, setTipos] = React.useState([])
-    const {pokeNome} = useParams()
-    
-    React.useEffect(()=>{
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeNome}`)
-        .then((res)=>{
-            //Mudar isso aqui. É para desestruturar no GlobalState
-            setPokeDetalhes(res.data)
-            setImagem(res.data.sprites.other['official-artwork'].front_default)
-            setEstatisticas(res.data.stats)
-            setGolpes(res.data.moves)
-            setTipos(res.data.types)
-        })
-        .catch((err)=>{
-            alert(err)
-        })
+    const { pokeNome } = useParams()
 
-    },[])
+    React.useEffect(() => {
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeNome}`)
+            .then((res) => {
+                setPokeDetalhes(res.data)
+                setImagem(res.data.sprites.other['official-artwork'].front_default)
+                setEstatisticas(res.data.stats)
+                setGolpes(res.data.moves)
+                setTipos(res.data.types)
+            })
+            .catch((err) => {
+                alert(err)
+            })
+
+    }, [])
 
     return (
         <div>
-            <HeaderContainer>
-                <DivContainer>
+            <HeaderDiv>
+                <ConteudoDiv>
                     <div>
-                        <Botão onClick={()=>history.push('/')} nome="Voltar para Home" />
+                        <Botão onClick={() => history.push('/')} nome="Voltar para Home" />
                     </div>
 
                     <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
-                    
+
                     <div>
-                        <Botão onClick={()=>history.push('/pokedex')} nome="Ir para Pokedex"/>
+                        <Botão onClick={() => history.push('/pokedex')} nome="Ir para Pokedex" />
                     </div>
-                </DivContainer>
-            </HeaderContainer>
-           
+                </ConteudoDiv>
+            </HeaderDiv>
+
             <ContainerConteudo>
                 <DivTitulo>
-                    <h1>{pokeDetalhes.name} </h1>  
-                    <span>#{pokeDetalhes.id}</span> 
+                    <h1>{pokeDetalhes.name} </h1>
+                    <span>#{pokeDetalhes.id}</span>
                 </DivTitulo>
-                
+
                 <DivPrincipal>
                     <div>
                         <DivImg>
-                            <img src={imagem} alt='Imagem do pokemon'/>
+                            <img src={imagem} alt='Imagem do pokemon' />
                         </DivImg>
 
                         <DivTipo>
-                            {tipos.map((tipo)=>{
-                                switch(tipo.type.name){
+                            {tipos.map((tipo) => {
+                                switch (tipo.type.name) {
                                     case 'fire':
                                         return <Tipo cor={'#FD7D24'}>{tipo.type.name}</Tipo>
-                                    case 'water': 
+                                    case 'water':
                                         return <Tipo cor={'#4592C4'}>{tipo.type.name}</Tipo>
                                     case 'grass':
                                         return <Tipo cor={'#9BCC50'}>{tipo.type.name}</Tipo>
@@ -119,14 +118,14 @@ const DetailsPage = () => {
                             })}
                         </DivTipo>
                     </div>
-                   
+
 
                     <DivInfo>
                         <div>
                             <h2>Estatisticas</h2>
                             <Estatisticas>
-                                {estatisticas.map((stat, index)=>{
-                                    return(
+                                {estatisticas.map((stat, index) => {
+                                    return (
                                         <h4 key={index}>{stat.stat.name} - <span>{stat.base_stat}</span></h4>
                                     )
                                 })}
@@ -134,10 +133,10 @@ const DetailsPage = () => {
 
                             <h2>Golpes</h2>
                             <Golpes>
-                                {golpes.filter((golpe, index)=>{
+                                {golpes.filter((golpe, index) => {
                                     return index < 5
-                                }).map((golpe, index)=>{
-                                    return(
+                                }).map((golpe, index) => {
+                                    return (
                                         <h4 key={index}>{golpe.move.name}</h4>
                                     )
                                 })}
@@ -145,9 +144,9 @@ const DetailsPage = () => {
                         </div>
                     </DivInfo>
                 </DivPrincipal>
-                
+
             </ContainerConteudo>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-const BotãoEstilizado = styled.button`
+
+const BotaoEstilizado = styled.button`
 	box-shadow:inset 0px 1px 0px 0px #f29c93;
 	background-color: #e7262c;
 	border-radius:6px;
@@ -24,5 +25,5 @@ const BotãoEstilizado = styled.button`
 `
 
 export {
-    BotãoEstilizado
+	BotaoEstilizado
 }

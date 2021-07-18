@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HeaderContainer = styled.div`
+const HeaderDiv = styled.header`
   background-color: #0a0a0a;
   padding: 15px 0;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
@@ -15,7 +15,7 @@ const LogoPokemon = styled.img`
   }  
 `
 
-const DivContainer = styled.div`
+const ConteudoDiv = styled.div`
   max-width: 100%;
   width: 1160px;
   display: flex;
@@ -101,7 +101,7 @@ const DivInfo = styled.div`
   }  
 `
 
-const Estatisticas =  styled.div`
+const Estatisticas = styled.div`
   margin-bottom: 20px;
   span{
     font-weight: normal;
@@ -112,11 +112,11 @@ const Golpes = styled.div`
 
 `
 
-export{
+export {
   ContainerConteudo,
-  HeaderContainer,
+  HeaderDiv,
   LogoPokemon,
-  DivContainer,
+  ConteudoDiv,
   DivTitulo,
   DivPrincipal,
   DivImg,

@@ -1,21 +1,20 @@
 import React from 'react'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineFacebook, AiFillTwitterSquare } from 'react-icons/ai'
-import { 
-    FooterDiv, 
-    SobreDiv, 
-    Logo, 
-    Pokebola, 
-    Icone, 
-    RedeSocial, 
-    SiteDiv, 
-    StyledDiv, 
-    ConteudoFooter 
+import {
+    FooterDiv,
+    SobreDiv,
+    Logo,
+    Pokebola,
+    Icone,
+    RedeSocial,
+    SiteDiv,
+    ConteudoFooter
 } from './styled'
 
 const Footer = () => {
     return (
         <FooterDiv>
-            <ConteudoFooter>                
+            <ConteudoFooter>
                 <SobreDiv>
                     <Logo src={"https://bit.ly/3wD8P6d"} />
 
@@ -30,9 +29,9 @@ const Footer = () => {
 
                 </SiteDiv>
 
-                <StyledDiv>
+                <div>
                     <div>
-                        <h3>Nossas redes sociais</h3>   
+                        <h3>Nossas redes sociais</h3>
                     </div>
                     <RedeSocial>
                         <a href='https://www.instagram.com' target='_blank' rel="noopener noreferrer"> <Icone ><AiOutlineInstagram /></Icone></a>
@@ -40,7 +39,7 @@ const Footer = () => {
                         <a href='https://www.facebook.com' target='_blank' rel="noopener noreferrer"> <Icone ><AiOutlineFacebook /></Icone></a>
                         <a href='https://www.twitter.com' target='_blank' rel="noopener noreferrer"><Icone ><AiFillTwitterSquare /></Icone></a>
                     </RedeSocial>
-                </StyledDiv>
+                </div>
             </ConteudoFooter>
         </FooterDiv>
     )

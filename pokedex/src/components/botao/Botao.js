@@ -1,12 +1,12 @@
 import React from 'react'
-import {BotãoEstilizado} from './styled'
+import { BotaoEstilizado } from './styled'
 
 
-const  Botao = (props) => {
+const Botao = (props) => {
 
     return <div>
-            <BotãoEstilizado onClick={props.onClick}>{props.nome}</BotãoEstilizado>
-        </div>
+        <BotaoEstilizado onClick={props.onClick}>{props.nome}</BotaoEstilizado>
+    </div>
 
 }
 

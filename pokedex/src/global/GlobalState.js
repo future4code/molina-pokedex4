@@ -6,28 +6,28 @@ const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
 
-    useEffect(() => {        
+    useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=')
             .then((res) => {
-                getPokemonDetail(res.data.results)
+                pegaDetalhePokemon(res.data.results)
             })
-            .catch((err) => { 
-                alert(err) 
+            .catch((err) => {
+                alert(err)
             })
-    },[])
-       
-    const getPokemonDetail = (array) => {
+    }, [])
+
+    const pegaDetalhePokemon = (array) => {
         for (let item of array) {
             axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
-            .then((res) => {
-                setPokemons((pokemons => [...pokemons, res.data]))
-            }).catch((err) => { 
-                alert(err) 
-            })
+                .then((res) => {
+                    setPokemons((pokemons => [...pokemons, res.data]))
+                }).catch((err) => {
+                    alert(err)
+                })
         }
     }
 
-    return <GlobalStateContext.Provider value={{ pokemons, setPokemons, pokedex, setPokedex}}>
+    return <GlobalStateContext.Provider value={{ pokemons, setPokemons, pokedex, setPokedex }}>
         {props.children}
     </GlobalStateContext.Provider>
 

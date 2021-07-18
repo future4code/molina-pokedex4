@@ -65,7 +65,7 @@ export {
     DivNome,
     Nome,
     DivImg,
-    Info, 
+    Info,
     Tipo,
     DivBotao
 }

@@ -9,15 +9,15 @@ const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path={'/'}>
-                    <HomePage/>
+                    <HomePage />
                 </Route>
 
                 <Route exact path={'/pokedex'}>
-                    <PokedexPage/>
+                    <PokedexPage />
                 </Route>
 
                 <Route exact path={'/details/:pokeNome'}>
-                    <DetailsPage/>
+                    <DetailsPage />
                 </Route>
             </Switch>
         </BrowserRouter>
