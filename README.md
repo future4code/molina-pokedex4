@@ -13,8 +13,9 @@ O que funciona:
 - Adicionar pokemons a pokedex
 - Remover pokemons da pokedex
 - Ver detalhes dos pokemons
+- Responsividade:
 
-- Web
+- Versão desktop
 
 ![image](https://user-images.githubusercontent.com/81184973/126021799-2ad34d6c-11de-44be-83e2-b2fec7ca8ea3.png)
 ![image](https://user-images.githubusercontent.com/81184973/126021807-d3a05ca8-9a41-4a41-89fb-0dfad3c605e4.png)
