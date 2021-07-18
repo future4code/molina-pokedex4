@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #202020;
   }
+
+  li{
+    list-style: none;
+  }
 `
 
 function App() {

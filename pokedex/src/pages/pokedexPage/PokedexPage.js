@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Botão from '../../components/botao/Botao'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import PokeCard from '../../components/pokecard/PokeCard'
-import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, DivCards, PokedexVazia } from './styled'
+import { HeaderContainer, LogoPokemon, DivContainer, ContainerConteudo, ContainerCards, PokedexVazia } from './styled'
 
 
 const PokedexPage = () => {
@@ -41,29 +41,32 @@ const PokedexPage = () => {
 
             <ContainerConteudo>
                 <h1>Pokedex</h1>
-                <DivCards>
+                <ContainerCards>
                     {global.pokedex.length > 0 ? 
                     global.pokedex.map((pokemon, index) => {
-                        return <PokeCard
-                            key={pokemon.id}
-                            nome={pokemon.name}
-                            imagem={pokemon.sprites.front_default}
-                            tipo={pokemon.types.map((tipo, index) => {
-                                return (
-                                    <span key={index}> -{tipo.type.name}</span>
-                                )
-                            })}
-                            nomeBotaoEsquerdo="Remover"
-                            onClickDetalhes={()=>detalhes(pokemon.name)}
-                            onClickPokedex={() => removePokemon(index)}
-                        />
+                        return (
+                            <li key={pokemon.id}>
+                                <PokeCard
+                                    nome={pokemon.name}
+                                    imagem={pokemon.sprites.front_default}
+                                    tipo={pokemon.types.map((tipo, index) => {
+                                        return (
+                                            <span key={index}> -{tipo.type.name}</span>
+                                        )
+                                    })}
+                                    nomeBotaoEsquerdo="Remover"
+                                    onClickDetalhes={()=>detalhes(pokemon.name)}
+                                    onClickPokedex={() => removePokemon(index)}
+                                />
+                            </li>
+                        )
                     })
 
                : <PokedexVazia><h1>Nenhum pokemon foi adicionado a pokedex.</h1>
                <img src='https://www.pngall.com/wp-content/uploads/5/Cute-Pikachu-PNG-Clipart.png'/>
                </PokedexVazia> }
 
-                </DivCards>
+                </ContainerCards>
             </ContainerConteudo>
             <Footer />
         </div>

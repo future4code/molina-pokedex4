@@ -3,7 +3,6 @@ import { GlobalStateContext } from './GlobalStateContext'
 import axios from 'axios'
 
 const GlobalState = (props) => {
-
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
 
@@ -12,19 +11,23 @@ const GlobalState = (props) => {
             .then((res) => {
                 getPokemonDetail(res.data.results)
             })
-            .catch((err) => { alert(err) })
-    }, [])
+            .catch((err) => { 
+                alert(err) 
+            })
+    },[])
        
-        const getPokemonDetail = (array) => {
-            for (let item of array) {
-                axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
-                    .then((res) => {
-                        setPokemons((pokemons => [...pokemons, res.data]))
-                    }).catch((err) => { alert(err) })
-            }
+    const getPokemonDetail = (array) => {
+        for (let item of array) {
+            axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
+            .then((res) => {
+                setPokemons((pokemons => [...pokemons, res.data]))
+            }).catch((err) => { 
+                alert(err) 
+            })
         }
+    }
 
-    return <GlobalStateContext.Provider value={{ pokemons, setPokemons, pokedex, setPokedex /*tipos*/ }}>
+    return <GlobalStateContext.Provider value={{ pokemons, setPokemons, pokedex, setPokedex}}>
         {props.children}
     </GlobalStateContext.Provider>
 

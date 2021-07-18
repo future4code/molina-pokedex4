@@ -53,7 +53,7 @@ const DivContainer = styled.div`
   }
 `
 
-const DivCards = styled.div`
+const ContainerCards = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
@@ -89,6 +89,6 @@ export {
   LogoPokemon,
   DivContainer,
   ContainerConteudo,
-  DivCards,
+  ContainerCards,
   PokedexVazia,
 }
