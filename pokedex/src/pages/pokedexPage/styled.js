@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-const HeaderContainer = styled.div`
+const HeaderDiv = styled.header`
   background-color: #0a0a0a;
   padding: 15px 0;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
 `
 
-const ContainerConteudo = styled.div`
+const ConteudoPokedex = styled.div`
   max-width: 100%;
   width: 1160px;
   padding: 0 15px;
@@ -32,7 +32,7 @@ const LogoPokemon = styled.img`
     margin-bottom: 20px;
   }
 `
-const DivContainer = styled.div`
+const ConteudoDiv = styled.div`
   max-width: 100%;
   width: 57.5%;
   display: flex;
@@ -85,10 +85,10 @@ const PokedexVazia = styled.div`
 `
 
 export {
-  HeaderContainer,
+  HeaderDiv,
   LogoPokemon,
-  DivContainer,
-  ContainerConteudo,
+  ConteudoDiv,
+  ConteudoPokedex,
   ContainerCards,
   PokedexVazia,
 }

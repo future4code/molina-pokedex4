@@ -1,7 +1,13 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
-import { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, ConatinerCards } from './styled'
+import {
+    ContainerConteudo,
+    HeaderContainer,
+    LogoPokemon,
+    ConteudoDiv,
+    ConatinerCards
+} from './styled'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import Botão from '../../components/botao/Botao'
 import PokeCard from '../../components/pokecard/PokeCard'
@@ -43,12 +49,12 @@ const HomePage = () => {
     return (
         <div>
             <HeaderContainer>
-                <DivContainer>
+                <ConteudoDiv>
                     <div>
                         <Botão onClick={irParaPokedex} nome="Ir para Pokedex" />
                     </div>
                     <LogoPokemon src='https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1' alt='Logo-Pokemon' />
-                </DivContainer>
+                </ConteudoDiv>
             </HeaderContainer>
             <ContainerConteudo>
                 <h1>Lista de Pokemons</h1>

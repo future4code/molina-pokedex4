@@ -23,7 +23,7 @@ const HeaderContainer = styled.div`
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
 `
 
-const DivContainer = styled.div`
+const ConteudoDiv = styled.div`
   max-width: 100%;
   width: 57.5%;
   display: flex;
@@ -63,4 +63,10 @@ const ConatinerCards = styled.ul`
   }
 `
 
-export { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, ConatinerCards };
+export {
+  ContainerConteudo,
+  HeaderContainer,
+  LogoPokemon,
+  ConteudoDiv,
+  ConatinerCards
+};
