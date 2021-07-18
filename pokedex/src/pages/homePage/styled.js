@@ -54,7 +54,7 @@ const LogoPokemon = styled.img`
   }
 `
 
-const DivCards = styled.div`
+const ConatinerCards = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
@@ -63,4 +63,4 @@ const DivCards = styled.div`
   }
 `
 
-export { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, DivCards };
+export { ContainerConteudo, HeaderContainer, LogoPokemon, DivContainer, ConatinerCards };
