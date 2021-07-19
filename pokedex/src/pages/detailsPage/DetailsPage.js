@@ -29,21 +29,21 @@ const Tipo = styled.h4`
 
 const DetailsPage = () => {
     const history = useHistory()
-    const [pokeDetalhes, setPokeDetalhes] = React.useState({})
-    const [imagem, setImagem] = React.useState()
-    const [estatisticas, setEstatisticas] = React.useState([])
-    const [golpes, setGolpes] = React.useState([])
-    const [tipos, setTipos] = React.useState([])
+    const [pokeDetalhes, setPokeDetalhes] = React.useState(undefined)
+    // const [imagem, setImagem] = React.useState()
+    // const [estatisticas, setEstatisticas] = React.useState([])
+    // const [golpes, setGolpes] = React.useState([])
+    // const [tipos, setTipos] = React.useState([])
     const { pokeNome } = useParams()
 
     React.useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeNome}`)
             .then((res) => {
                 setPokeDetalhes(res.data)
-                setImagem(res.data.sprites.other['official-artwork'].front_default)
-                setEstatisticas(res.data.stats)
-                setGolpes(res.data.moves)
-                setTipos(res.data.types)
+                // setImagem(res.data.sprites.other['official-artwork'].front_default)
+                // setEstatisticas(res.data.stats)
+                // setGolpes(res.data.moves)
+                // setTipos(res.data.types)
             })
             .catch((err) => {
                 alert(err)
@@ -67,6 +67,7 @@ const DetailsPage = () => {
                 </ConteudoDiv>
             </HeaderDiv>
 
+            {pokeDetalhes ? 
             <ContainerConteudo>
                 <DivTitulo>
                     <h1>{pokeDetalhes.name} </h1>
@@ -76,11 +77,11 @@ const DetailsPage = () => {
                 <DivPrincipal>
                     <div>
                         <DivImg>
-                            <img src={imagem} alt='Imagem do pokemon' />
+                            <img src={pokeDetalhes.sprites.other['official-artwork'].front_default} alt='Imagem do pokemon' />
                         </DivImg>
 
                         <DivTipo>
-                            {tipos.map((tipo) => {
+                            {pokeDetalhes.types.map((tipo) => {
                                 switch (tipo.type.name) {
                                     case 'fire':
                                         return <Tipo cor={'#FD7D24'}>{tipo.type.name}</Tipo>
@@ -124,7 +125,7 @@ const DetailsPage = () => {
                         <div>
                             <h2>Estatisticas</h2>
                             <Estatisticas>
-                                {estatisticas.map((stat, index) => {
+                                {pokeDetalhes.stats.map((stat, index) => {
                                     return (
                                         <h4 key={index}>{stat.stat.name} - <span>{stat.base_stat}</span></h4>
                                     )
@@ -133,7 +134,7 @@ const DetailsPage = () => {
 
                             <h2>Golpes</h2>
                             <Golpes>
-                                {golpes.filter((golpe, index) => {
+                                {pokeDetalhes.moves.filter((golpe, index) => {
                                     return index < 5
                                 }).map((golpe, index) => {
                                     return (
@@ -146,6 +147,7 @@ const DetailsPage = () => {
                 </DivPrincipal>
 
             </ContainerConteudo>
+            :'Carregando...'}
             <Footer />
         </div>
     )
