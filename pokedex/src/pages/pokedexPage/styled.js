@@ -11,6 +11,7 @@ const ConteudoPokedex = styled.div`
   width: 1160px;
   padding: 0 15px;
   margin: 0 auto;
+  min-height: 100vh;
 
   h1{
     margin: 60px 0 20px 15px;

@@ -27,6 +27,8 @@ const GlobalState = (props) => {
         }
     }
 
+    console.log(pokemons)
+
     return <GlobalStateContext.Provider value={{ pokemons, setPokemons, pokedex, setPokedex }}>
         {props.children}
     </GlobalStateContext.Provider>

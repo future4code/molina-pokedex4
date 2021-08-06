@@ -5,9 +5,8 @@ const ContainerConteudo = styled.div`
   width: 1160px;
   padding: 0 15px;
   margin: 0 auto;
-
+  min-height: 100vh;
   h1{
-    margin: 60px 0 20px 15px;
     color: white;
 
     @media (max-width: 420px){
@@ -63,10 +62,18 @@ const ConatinerCards = styled.ul`
   }
 `
 
+const ContainerSearch = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 28px  60px 15px;
+`
+
 export {
   ContainerConteudo,
   HeaderContainer,
   LogoPokemon,
   ConteudoDiv,
-  ConatinerCards
+  ConatinerCards,
+  ContainerSearch
 };
