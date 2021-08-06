@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Footer from '../../components/footer/Footer'
 import { useHistory } from 'react-router-dom'
 import {
@@ -6,15 +6,18 @@ import {
     HeaderContainer,
     LogoPokemon,
     ConteudoDiv,
-    ConatinerCards
+    ConatinerCards,
+    ContainerSearch
 } from './styled'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
 import Botão from '../../components/botao/Botao'
 import PokeCard from '../../components/pokecard/PokeCard'
+import Search from '../../components/search/Search'
 
 const HomePage = () => {
     const history = useHistory()
     const global = useContext(GlobalStateContext)
+    const [searchValue, setSearchValue] = useState('')
 
     const irParaPokedex = () => {
         history.push('/pokedex')
@@ -29,7 +32,8 @@ const HomePage = () => {
         history.push(`/details/${pokeNome}`)
     }
 
-    const pokemonsFiltrados = global.pokemons.filter((pokemon) => {
+    const pokemonsFiltrados = global.pokemons.filter((pokemon)=> pokemon.name.toLowerCase().includes(searchValue.toLowerCase()))
+    .filter((pokemon) => {
         const pokedex = global.pokedex.find((pokemonEscolhido) => {
             if (pokemon.id === pokemonEscolhido.id) {
                 return true
@@ -45,6 +49,10 @@ const HomePage = () => {
         }
     })
 
+    const onChange = (e) =>{
+        setSearchValue(e.target.value)
+        console.log(searchValue)
+    }
 
     return (
         <div>
@@ -57,9 +65,16 @@ const HomePage = () => {
                 </ConteudoDiv>
             </HeaderContainer>
             <ContainerConteudo>
-                <h1>Lista de Pokemons</h1>
+                <ContainerSearch>
+                    <h1>Lista de Pokemons</h1>
+                    <Search
+                        value={searchValue}
+                        onChange={onChange}
+                    />
+                </ContainerSearch>
+                
                 <ConatinerCards>
-                    {pokemonsFiltrados.map((pokemon) => {
+                    {pokemonsFiltrados.length > 1 ? pokemonsFiltrados.map((pokemon) => {
                         return (
                             <li key={pokemon.id}>
                                 <PokeCard
@@ -77,7 +92,7 @@ const HomePage = () => {
                                 />
                             </li>
                         )
-                    })}
+                    }):<h1>Nenhum Pokemon encontrado</h1>}
                 </ConatinerCards>
             </ContainerConteudo>
             <Footer />

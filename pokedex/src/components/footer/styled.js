@@ -5,7 +5,7 @@ const FooterDiv = styled.footer`
     padding: 20px 0;
     color: white;
     background-color: #0a0a0a;
-    margin-top: 60px;
+    margin-top: 80px;
 
     h3{
         margin-bottom: 15px;

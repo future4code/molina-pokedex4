@@ -70,7 +70,7 @@ const PokedexPage = () => {
                         })
 
                         : <PokedexVazia><h1>Nenhum pokemon foi adicionado a pokedex.</h1>
-                            <img src='https://www.pngall.com/wp-content/uploads/5/Cute-Pikachu-PNG-Clipart.png' />
+                            <img src='https://www.pngall.com/wp-content/uploads/5/Cute-Pikachu-PNG-Clipart.png' alt='img'/>
                         </PokedexVazia>}
 
                 </ContainerCards>
